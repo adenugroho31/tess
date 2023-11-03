@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class konversi {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int pilihan;
+
+        do {
+            System.out.println("Pilih operasi konversi bilangan:");
+            System.out.println("1. Biner ke Desimal");
+            System.out.println("2. Desimal ke Biner");
+            System.out.println("3. Biner ke Heksadesimal");
+            System.out.println("4. Heksadesimal ke Biner");
+            System.out.println("5. Desimal ke Heksadesimal");
+            System.out.println("6. Heksadesimal ke Desimal");
+            System.out.println("0. Keluar");
+            System.out.println();
+            System.out.print("Masukkan pilihan: ");
+            pilihan = input.nextInt();
+            System.out.println();
+
+            switch (pilihan) {
+                case 1:
+                    System.out.print("Masukkan bilangan biner: ");
+                    String biner = input.next();
+                    int binerKeDesimal = Integer.parseInt(biner, 2);
+                    System.out.println("Hasil konversi ke desimal: " + binerKeDesimal);
+                    break;
+                case 2:
+                    System.out.print("Masukkan bilangan desimal: ");
+                    int desimal = input.nextInt();
+                    String desimalKeBiner = Integer.toBinaryString(desimal);
+                    System.out.println("Hasil konversi ke biner: " + desimalKeBiner);
+                    break;
+                case 3:
+                    System.out.print("Masukkan bilangan biner: ");
+                    String binerHeksa = input.next();
+                    int desimalDariBiner = Integer.parseInt(binerHeksa, 2);
+                    String binerKeHeksa = Integer.toHexString(desimalDariBiner);
+                    System.out.println("Hasil konversi ke heksadesimal: " + binerKeHeksa);
+                    break;
+                case 4:
+                    System.out.print("Masukkan bilangan heksadesimal: ");
+                    String heksaBiner = input.next();
+                    int desimalDariHeksa = Integer.parseInt(heksaBiner, 16);
+                    String heksaKeBiner = Integer.toBinaryString(desimalDariHeksa);
+                    System.out.println("Hasil konversi ke biner: " + heksaKeBiner);
+                    break;
+                case 5:
+                    System.out.print("Masukkan bilangan desimal: ");
+                    int desimalHeksa = input.nextInt();
+                    String desimalKeHeksa = Integer.toHexString(desimalHeksa);
+                    System.out.println("Hasil konversi ke heksadesimal: " + desimalKeHeksa);
+                    break;
+                case 6:
+                    System.out.print("Masukkan bilangan heksadesimal: ");
+                    String heksaDesimal = input.next();
+                    int heksaKeDesimal = Integer.parseInt(heksaDesimal, 16);
+                    System.out.println("Hasil konversi ke desimal: " + heksaKeDesimal);
+                    break;
+                case 0:
+                    System.out.println("Terima kasih");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid");
+            }
+
+            System.out.println();
+        } while (pilihan != 0);
+
+        input.close();
+    }
+}
